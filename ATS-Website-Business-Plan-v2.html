@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ATS Business Package</title>
+<style>
+  @page { size: 1000px 1414px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #f7f9fc; }
+  body { font-family: "Segoe UI", Arial, Helvetica, sans-serif; color: #24344a; }
+  .page { width: 1000px; height: 1414px; margin: 0 auto; overflow: hidden; display: flex; flex-direction: column; background: #f7f9fc; }
+  .band { background: #060d18; text-align: center; padding: 18px 0 16px; }
+  .band img { width: 300px; display: inline-block; }
+  .tagline { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 8px; }
+  .tagline .line { width: 46px; height: 1px; background: #3b4a5e; }
+  .tagline span.t { color: #8fa0b3; font-size: 11px; letter-spacing: 3px; }
+  .rule { height: 5px; background: #2e8bf0; }
+  .wrap { flex: 1; padding: 22px 64px 0; display: flex; flex-direction: column; }
+  h1 { text-align: center; font-size: 34px; font-weight: 800; color: #0e2f52; }
+  .pill { display: inline-block; vertical-align: 6px; margin-left: 14px; background: #2f8fef; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; padding: 5px 12px; border-radius: 4px; }
+  .sub { text-align: center; font-size: 15px; color: #8b98ab; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 14px; }
+  th { background: #0a1220; color: #fff; font-size: 17px; font-weight: 800; padding: 11px 14px; }
+  th.biz { background: #2f8fef; }
+  th .pop { display: block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: #d9ecff; margin-top: 2px; }
+  td { padding: 6px 16px; border-bottom: 1px solid #e2e8f0; }
+  td.f { width: 64%; color: #24344a; background: #fbfcfe; }
+  td.v { width: 36%; text-align: center; background: #fbfcfe; color: #12283f; }
+  tr.setup td { background: #e9eef6; }
+  tr.month td { background: #e6edf8; }
+  td.v.bizc { background: #dce9fb; }
+  tr.setup td.v.bizc, tr.month td.v.bizc { background: #cfe0f8; }
+  tr.setup td.f { font-weight: 700; }
+  tr.month td.f { font-weight: 700; }
+  s { color: #9aa7b8; font-size: 13px; margin-right: 10px; }
+  .deal { color: #2e8bf0; font-weight: 800; font-size: 19px; }
+  tr.month td.v { font-weight: 800; font-size: 16px; }
+  .ck { color: #2e8bf0; font-size: 17px; font-weight: 800; }
+  .no { color: #a6b0bf; }
+  .boxes { display: flex; gap: 24px; margin-top: 16px; }
+  .boxes + .boxes { margin-top: 16px; }
+  .box { flex: 1; background: #eef1f6; border-radius: 10px; padding: 14px 20px; }
+  .box h3 { font-size: 15px; font-weight: 800; color: #16283c; margin-bottom: 10px; }
+  .box ul { list-style: none; }
+  .box li { font-size: 12px; color: #3d4c61; line-height: 1.45; padding-left: 14px; position: relative; margin-bottom: 6px; }
+  .box li:before { content: "\2022"; position: absolute; left: 0; color: #55677f; }
+  .box li b { color: #16283c; }
+  .dark { background: #0a1220; }
+  .dark h3.k { color: #2e8bf0; font-size: 12px; letter-spacing: 1.2px; font-weight: 800; margin-bottom: 4px; }
+  .dark .big { color: #fff; font-size: 23px; font-weight: 800; margin-bottom: 10px; }
+  .dark li { color: #cfd8e4; }
+  .dark li b { color: #fff; }
+  .note { text-align: center; font-size: 12px; font-style: italic; color: #98a2b3; margin-top: 12px; }
+  .foot { background: #0a1626; border-top: 5px solid #2e8bf0; text-align: center; padding: 15px 10px 13px; }
+  .foot .c { color: #fff; font-size: 15px; font-weight: 700; }
+  .foot .sep { color: #55677f; padding: 0 12px; }
+  .foot .t { color: #93a1b5; font-size: 12.5px; margin-top: 7px; }
+  .wa-btn { display: inline-flex; align-items: center; gap: 8px; margin-left: 16px; vertical-align: 7px; background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; font-size: 13px; font-weight: 800; letter-spacing: .3px; padding: 9px 18px; border-radius: 999px; text-decoration: none; box-shadow: 0 4px 14px rgba(37, 211, 102, .45); animation: wa-pulse 1.8s infinite; transition: transform .15s ease; }
+  .wa-btn:hover { transform: scale(1.06); }
+  .wa-btn svg { width: 17px; height: 17px; fill: #fff; flex: none; }
+  @keyframes wa-pulse {
+    0% { box-shadow: 0 4px 14px rgba(37, 211, 102, .45), 0 0 0 0 rgba(37, 211, 102, .55); }
+    70% { box-shadow: 0 4px 14px rgba(37, 211, 102, .45), 0 0 0 14px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 4px 14px rgba(37, 211, 102, .45), 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="band">
+    <img src="ats-header.webp" alt="ATS - America Technology Services">
+    <div class="tagline"><div class="line"></div><span class="t">Technology Tailored to Your Business</span><div class="line"></div></div>
+  </div>
+  <div class="rule"></div>
+
+  <div class="wrap">
+    <h1>Business Package<span class="pill">MOST POPULAR</span><a class="wa-btn" href="https://wa.me/27627420304?text=Please%20send%20me%20a%20Quote" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Send me a Quote</a></h1>
+    <div class="sub">Everything you need to get your business found online. Prices in South African Rand (ZAR).</div>
+
+    <table>
+      <tr><th style="text-align:left;"></th><th class="biz">Business<span class="pop">MOST POPULAR</span></th></tr>
+      <tr class="setup"><td class="f">Setup fee (50% off, first 5 clients)</td><td class="v bizc"><s>R3,500</s><span class="deal">R1,750</span></td></tr>
+      <tr class="month"><td class="f">Monthly fee</td><td class="v bizc">R550</td></tr>
+      <tr><td class="f">Pages</td><td class="v bizc">Up to 5</td></tr>
+      <tr><td class="f">Mobile-friendly design</td><td class="v bizc"><span class="ck">&#10004;</span></td></tr>
+      <tr><td class="f">Your own .co.za domain</td><td class="v bizc"><span class="ck">&#10004;</span></td></tr>
+      <tr><td class="f">Hosting and SSL (secure padlock)</td><td class="v bizc"><span class="ck">&#10004;</span></td></tr>
+      <tr><td class="f">Contact form, click-to-call, WhatsApp button</td><td class="v bizc"><span class="ck">&#10004;</span></td></tr>
+      <tr><td class="f">Facebook and social links</td><td class="v bizc"><span class="ck">&#10004;</span></td></tr>
+      <tr><td class="f">Google Maps and business hours</td><td class="v bizc"><span class="ck">&#10004;</span></td></tr>
+      <tr><td class="f">Photo gallery</td><td class="v bizc"><span class="ck">&#10004;</span></td></tr>
+      <tr><td class="f">Basic Google search setup (SEO)</td><td class="v bizc"><span class="ck">&#10004;</span></td></tr>
+      <tr><td class="f">Professional email (name@yourbusiness.co.za)</td><td class="v bizc"><span class="ck">&#10004;</span></td></tr>
+      <tr><td class="f">Online booking or enquiry system</td><td class="v bizc"><span class="no">-</span></td></tr>
+      <tr><td class="f">Customer list / simple CRM</td><td class="v bizc"><span class="no">-</span></td></tr>
+      <tr><td class="f">Monthly edits included</td><td class="v bizc">2</td></tr>
+      <tr><td class="f">Delivery time</td><td class="v bizc">2 days</td></tr>
+    </table>
+
+    <div class="boxes">
+      <div class="box">
+        <h3>What the monthly fee covers</h3>
+        <ul>
+          <li>Hosting, security updates and backups</li>
+          <li>Support by email or WhatsApp</li>
+          <li>Content changes up to your monthly edit limit</li>
+          <li>Domain renewal included in the monthly fee</li>
+          <li>Your site stays online during load-shedding (cloud hosted)</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Terms</h3>
+        <ul>
+          <li><b>Term:</b> No long term contracts. Cancel at any time. Month to Month</li>
+          <li><b>Payment:</b> setup fee and first month upfront, then monthly by EFT</li>
+          <li><b>Revisions:</b> two rounds of changes before launch</li>
+          <li><b>Extras:</b> extra page R600, extra edit R250, logo design from R1,000</li>
+          <li><b>Ownership:</b> you own your content and domain</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="boxes">
+      <div class="box">
+        <h3>Optional add-ons</h3>
+        <ul>
+          <li>Google Business Profile setup: R800</li>
+          <li>POS system setup: quoted separately</li>
+          <li>Cloud migration and backup: quoted separately</li>
+        </ul>
+      </div>
+      <div class="box dark">
+        <h3 class="k">LAUNCH OFFER: FIRST 5 CLIENTS</h3>
+        <div class="big">50% off your setup fee</div>
+        <ul>
+          <li>Normal setup fee: R3,500 &mdash; you pay <b>R1,750</b>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">Prices include VAT where applicable. Prices valid for 10 days from date of quote. Launch offer limited to the first 5 clients.</div>
+  </div>
+
+  <div class="foot">
+    <div class="c">hello@atswcape.co.uk<span class="sep">|</span>WhatsApp: +27 62 742 0304<span class="sep">|</span>www.atswcape.co.uk</div>
+    <div class="t">100% online. Based in Grabouw, Western Cape. We serve clients anywhere in South Africa.</div>
+  </div>
+</div>
+</body>
+</html>
